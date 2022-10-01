@@ -173,7 +173,7 @@ export default function HeaderMegaMenu() {
               shadow="md"
               withinPortal
             >
-              <HoverCard.Target>
+              {/* <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
@@ -185,7 +185,7 @@ export default function HeaderMegaMenu() {
                     />
                   </Center>
                 </a>
-              </HoverCard.Target>
+              </HoverCard.Target> */}
 
               <HoverCard.Dropdown sx={{ overflow: "hidden" }}>
                 <Divider
@@ -202,7 +202,7 @@ export default function HeaderMegaMenu() {
               </HoverCard.Dropdown>
             </HoverCard>
             <Link href="/aboutus">
-              <span className={classes.link}>About Us</span>
+              <span className={classes.link}>Track NFTs</span>
             </Link>
             <Link href="/contactus" className={classes.link}>
               <span className={classes.link}>Contact Us</span>
