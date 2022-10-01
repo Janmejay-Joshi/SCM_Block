@@ -30,6 +30,7 @@ import {
 } from "@tabler/icons";
 import Image from "next/image";
 import Link from "next/link";
+import { MantineLogo } from '@mantine/ds';
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -150,6 +151,9 @@ export default function HeaderMegaMenu() {
     <Box pb={10}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
+        <Center>
+        <MantineLogo type="mark" size={30} />
+      </Center>
           {/* <Image src={} height={40} width={150} /> */}
 
           <Group

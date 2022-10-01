@@ -1,14 +1,13 @@
-import { AppShell, Container, Group, Paper, Space } from "@mantine/core";
+import { AppShell, Container, Grid, Group, Paper, SimpleGrid, Space } from "@mantine/core";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import HeaderMegaMenu from "../../components/Header";
 import { NavbarMinimal } from "../../components/Sidebar";
+import { FeaturesCard } from "../../components/UserNftCard";
 import styles from "../../styles/user/a.module.scss";
 
 export default function A() {
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +16,7 @@ export default function A() {
       <AppShell
         padding="md"
         header={<HeaderMegaMenu />}
+        navbar={<NavbarMinimal />}
         styles={(theme) => ({
           main: {
             backgroundColor:
@@ -27,12 +27,30 @@ export default function A() {
         })}
       >
         <div className={styles.main_cont}>
-            <>
-              <NavbarMinimal />
-              <Paper withBorder shadow="md" pl={60} pr={60} pt={30} pb={30} mt={30} radius="md" >
-              
-              </Paper>
-            </>
+          <Paper
+            withBorder
+            shadow="md"
+            pl={60}
+            pr={60}
+            pt={30}
+            pb={30}
+            mt={30}
+            radius="md"
+          >
+            <SimpleGrid cols={3}
+            breakpoints={[
+              { maxWidth: 980, cols: 3, spacing: 'md' },
+              { maxWidth: 755, cols: 2, spacing: 'sm' },
+              { maxWidth: 600, cols: 1, spacing: 'sm' },
+            ]}
+            >
+              <div><FeaturesCard/></div>
+              <div><FeaturesCard/></div>
+              <div><FeaturesCard/></div>
+              <div><FeaturesCard/></div>
+              <div><FeaturesCard/></div>
+            </SimpleGrid>
+          </Paper>
         </div>
       </AppShell>
     </div>
