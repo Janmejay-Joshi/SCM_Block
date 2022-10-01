@@ -8,6 +8,7 @@ import styles from "../../styles/user/a.module.scss";
 
 export default function A() {
   useEffect(() => {}, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +17,7 @@ export default function A() {
       <AppShell
         padding="md"
         header={<HeaderMegaMenu />}
-        navbar={<NavbarMinimal />}
+        //navbar={<NavbarMinimal />}
         styles={(theme) => ({
           main: {
             backgroundColor:
@@ -34,7 +35,6 @@ export default function A() {
             pr={60}
             pt={30}
             pb={30}
-            mt={20}
             radius="md"
           >
             <SimpleGrid cols={3}
