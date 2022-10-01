@@ -2,9 +2,8 @@ import { AppShell, Container, Group, Paper, Space } from "@mantine/core";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import HeaderMegaMenu from "../../components/Header";
+import { NavbarMinimal } from "../../components/Sidebar";
 import styles from "../../styles/user/a.module.scss";
-
-
 
 export default function A() {
   useEffect(() => {
@@ -29,6 +28,7 @@ export default function A() {
       >
         <div className={styles.main_cont}>
             <>
+              <NavbarMinimal />
               <Paper withBorder shadow="md" pl={60} pr={60} pt={30} pb={30} mt={30} radius="md" >
               
               </Paper>
