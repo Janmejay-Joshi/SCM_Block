@@ -6,9 +6,9 @@ import type { ConfigOptions } from '@web3modal/react'
 import { Web3ModalProvider } from '@web3modal/react'
 import { ThirdwebProvider, ChainId } from "@thirdweb-dev/react";
 import { chains, providers } from '@web3modal/ethereum'
+  import { ethers } from "ethers";
 
 const desiredChainId = ChainId.Mumbai;
-
 
 const config: ConfigOptions = {
   projectId: 'f554e3fadda20b51bc0f5587bfafe948',
@@ -26,6 +26,7 @@ export default function MyApp(props: AppProps) {
   const [colorScheme, setColorScheme] = useState<ColorScheme>('light');
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+
   return (
     <>
       <Head>
@@ -35,7 +36,10 @@ export default function MyApp(props: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThirdwebProvider desiredChainId={desiredChainId}>
+      <ThirdwebProvider 
+        desiredChainId={desiredChainId}
+        autoConnect
+      >
         <Web3ModalProvider config={config}>
           <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider

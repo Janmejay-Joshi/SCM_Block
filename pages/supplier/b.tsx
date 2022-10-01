@@ -26,22 +26,40 @@ import {
 import Head from "next/head";
 import HeaderMegaMenu from "../../components/Header";
 import { NavbarMinimal } from "../../components/Sidebar";
+  import { useNFTDrop, useWalletConnect } from '@thirdweb-dev/react'
 
 export default function Signup() {
-  //Firebase
-
+  const contract = useNFTDrop("0x4fEfe8Abf8CE628AaB982b6EB99FF68cC71eCB89")
+  const wallet = useWalletConnect();
   const form = useForm({
     initialValues: {
-      a: "",
-      b: "",
-      c: "",
-      d: "",
-      e: "",
-      f: "",
+      name: "",
+      units: "",
+      desc: "",
+      // d: "",
+      // e: "",
+      // f: "",
     },
 
     validate: {},
   });
+
+const onSubmitNFT =async () => {
+  const metadatas = [{
+  name: "Cool NFT",
+  description: "This is a cool NFT",
+  units: 0
+}, {
+  name: "Cool NFT",
+  description: "This is a cool NFT",
+  units: 0
+}];
+
+  if(contract){
+    const results = await contract.createBatch(metadatas); // uploads and creates the NFTs on chain
+  }
+}
+
 
   return (
     <>
@@ -51,7 +69,7 @@ export default function Signup() {
       <AppShell
         padding="md"
         header={<HeaderMegaMenu />}
-        navbar={<NavbarMinimal />}
+        //navbar={<NavbarMinimal />}
         styles={(theme) => ({
           main: {
             backgroundColor:
@@ -79,29 +97,29 @@ export default function Signup() {
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
           <form onSubmit={form.onSubmit(() => form.validate())}>
             <TextInput
-              label="A"
-              placeholder="A"
-              {...form.getInputProps("a")}
+              label="Name"
+              placeholder=""
+              {...form.getInputProps("name")}
               icon={<IconComponents size={14} />}
               required
             />
             <TextInput
-              label="b"
-              placeholder="b"
-              {...form.getInputProps("b")}
-              icon={<IconComponents size={14} />}
-              mt="md"
-              required
-            />
-            <TextInput
-              label="C"
-              placeholder="c"
-              {...form.getInputProps("c")}
+              label="Units"
+              placeholder=""
+              {...form.getInputProps("units")}
               icon={<IconComponents size={14} />}
               mt="md"
               required
             />
             <TextInput
+              label="Description"
+              placeholder=""
+              {...form.getInputProps("desc")}
+              icon={<IconComponents size={14} />}
+              mt="md"
+              required
+            />
+            {/* <TextInput
               label="D"
               placeholder="d"
               {...form.getInputProps("d")}
@@ -124,9 +142,9 @@ export default function Signup() {
               icon={<IconComponents size={14} />}
               mt="md"
               required
-            />
+            /> */}
 
-            <Button fullWidth mt="xl" type="submit">
+            <Button fullWidth mt="xl" type="submit" onClick={onSubmitNFT}>
               Add Components
             </Button>
           </form>

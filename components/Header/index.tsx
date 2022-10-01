@@ -32,6 +32,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MantineLogo } from '@mantine/ds';
 import { useConnectModal } from '@web3modal/react'
+  import { ConnectWallet } from "@thirdweb-dev/react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -210,14 +211,7 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Group className={classes.hiddenMobile}>
-            <Button variant="default" onClick={open}>
-              Log in
-            </Button>
-            <Link href="/auth/signup">
-            <Button>
-             Register
-            </Button>
-            </Link>
+          <ConnectWallet/>
           </Group>
 
           <Burger
@@ -274,11 +268,7 @@ export default function HeaderMegaMenu() {
               Log in
             </Button>
             </Link>
-            <Link href="/auth/signup">
-            <Button>
-             Register
-            </Button>
-            </Link>
+          <ConnectWallet/>
           </Group>
         </ScrollArea>
       </Drawer>

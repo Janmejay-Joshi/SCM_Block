@@ -51,7 +51,7 @@ import {
         <AppShell
           padding="md"
           header={<HeaderMegaMenu />}
-          navbar={<NavbarMinimal />}
+          //navbar={<NavbarMinimal />}
           styles={(theme) => ({
             main: {
               backgroundColor:
@@ -137,4 +137,3 @@ import {
     );
   }
   
-)
