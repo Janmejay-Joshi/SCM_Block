@@ -91,7 +91,7 @@ import {
       <Container size="lg" py="xl">
         <Group position="center">
           <Badge variant="filled" size="lg" mt="lg">
-            Best company ever
+            {/* Best company ever */}
           </Badge>
         </Group>
   
