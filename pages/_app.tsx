@@ -22,25 +22,7 @@ export default function MyApp(props: AppProps) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          /** Put your mantine theme override here */
-          fontFamily: "Open Sans, sans serif",
-          spacing: { xs: 15, sm: 20, md: 25, lg: 30, xl: 40 },
-          colorScheme: "light",
-          colors: {
-            // override dark colors to change them for all components
-            dark: [
-              '#d5d7e0',
-              '#acaebf',
-              '#8c8fa3',
-              '#666980',
-              '#4d4f66',
-              '#34354a',
-              '#2b2c3d',
-              '#1d1e30',
-              '#0c0d21',
-              '#01010a',
-            ],
-          },
+          colorScheme
         }}
       >
         <Component {...pageProps} />
