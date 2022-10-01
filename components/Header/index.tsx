@@ -31,6 +31,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { MantineLogo } from '@mantine/ds';
+import { useConnectModal } from '@web3modal/react'
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -130,6 +131,7 @@ const mockdata = [
 ];
 
 export default function HeaderMegaMenu() {
+  const { isOpen, open, close } = useConnectModal()
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
@@ -208,11 +210,9 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Group className={classes.hiddenMobile}>
-          <Link href="/auth/login">
-            <Button variant="default">
+            <Button variant="default" onClick={open}>
               Log in
             </Button>
-            </Link>
             <Link href="/auth/signup">
             <Button>
              Register

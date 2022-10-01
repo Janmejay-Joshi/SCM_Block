@@ -5,9 +5,14 @@ import HeaderMegaMenu from "../../components/Header";
 import { NavbarMinimal } from "../../components/Sidebar";
 import { FeaturesCard } from "../../components/UserNftCard";
 import styles from "../../styles/user/a.module.scss";
+import { useAccount } from '@web3modal/react'
+
 
 export default function A() {
-  useEffect(() => {}, []);
+  const { chainSupported, address, chainId, connector } = useAccount()
+  console.log(address);
+  
+ 
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +21,7 @@ export default function A() {
       <AppShell
         padding="md"
         header={<HeaderMegaMenu />}
-        navbar={<NavbarMinimal />}
+        //navbar={<NavbarMinimal />}
         styles={(theme) => ({
           main: {
             backgroundColor:
