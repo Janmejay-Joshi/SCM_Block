@@ -1,6 +1,7 @@
-import { AppShell, Container, Grid, Group, Paper, SimpleGrid, Space } from "@mantine/core";
+import { AppShell, Button, Center, Container, Grid, Group, Paper, SimpleGrid, Space, Stack } from "@mantine/core";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Cards from "../../components/Card1";
 import HeaderMegaMenu from "../../components/Header";
 import { NavbarMinimal } from "../../components/Sidebar";
 import { FeaturesCard } from "../../components/UserNftCard";
@@ -37,8 +38,21 @@ export default function A() {
             mt={20}
             radius="md"
           > 
-            <Group>
-                <img src="https://picsum.photos/200"/>
+          
+            <Group grow>
+                <img src="https://picsum.photos/300/200"/>
+                <Stack>
+                  <Button>click me</Button>
+                  <Button>click me</Button>
+                  <Button>click me</Button>
+                </Stack>
+            </Group>
+            <Group mt={40}>
+              <SimpleGrid cols={3}>
+                <Cards/>
+                <Cards/>
+                <Cards/>
+                </SimpleGrid>
             </Group>
           </Paper>
         </div>
