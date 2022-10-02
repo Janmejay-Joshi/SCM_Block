@@ -11,26 +11,27 @@ export default function TableDashboardSupplier() {
     
     }, [contract])
 
-    const elements = [];
     const dataGet =async () => {
+    const elements = [];
         
         if(contract){
           const nft = await contract.getAll();
             nft.map((doc)=>{
                 elements.push({
                     name:doc.metadata.name,
-                    owner:doc.metadata.owner,
+                    owner:doc.owner,
                     description:doc.metadata.description
 
                 })
             })
+            setData(elements)
           console.log(nft);
         }
       }
 
     
 
-  const rows = elements.map((element) => (
+  const rows = data.map((element) => (
     <tr key={element.name}>
       <td>{element.name}</td>
       <td>{element.owner}</td>
