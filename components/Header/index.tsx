@@ -17,6 +17,8 @@ import {
   Collapse,
   ScrollArea,
   Space,
+  useMantineColorScheme,
+  ActionIcon,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
@@ -27,6 +29,8 @@ import {
   IconFingerprint,
   IconCoin,
   IconChevronDown,
+  IconSun,
+  IconMoonStars,
 } from "@tabler/icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -137,6 +141,8 @@ export default function HeaderMegaMenu() {
     useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const { classes, theme } = useStyles();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.label}>
@@ -209,7 +215,15 @@ export default function HeaderMegaMenu() {
               <span className={classes.link}>User NFTs</span>
             </Link>
           </Group>
-
+          <ActionIcon
+      variant="outline"
+      color={dark ? 'yellow' : 'blue'}
+      onClick={() => toggleColorScheme()}
+      title="Toggle color scheme"
+    >
+      {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
+    </ActionIcon>
+          
           <Group className={classes.hiddenMobile}>
           <ConnectWallet/>
           </Group>

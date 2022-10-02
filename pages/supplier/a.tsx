@@ -1,4 +1,5 @@
-import { AppShell, Container, Grid, Group, Paper, SimpleGrid, Space } from "@mantine/core";
+import { ActionIcon, AppShell, Container, Grid, Group, Paper, SimpleGrid, Space, useMantineColorScheme } from "@mantine/core";
+import { IconMoonStars, IconSun } from "@tabler/icons";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import HeaderMegaMenu from "../../components/Header";
@@ -7,6 +8,8 @@ import { FeaturesCard } from "../../components/UserNftCard";
 import styles from "../../styles/user/a.module.scss";
 
 export default function A() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
   useEffect(() => {}, []);
 
   return (
@@ -27,6 +30,7 @@ export default function A() {
           },
         })}
       >
+       
         <div className={styles.main_cont}>
           <Paper
             withBorder
