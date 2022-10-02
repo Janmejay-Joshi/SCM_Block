@@ -1,18 +1,25 @@
-import { AppShell, Container, Grid, Group, Paper, SimpleGrid, Space } from "@mantine/core";
+import {
+  AppShell,
+  Button,
+  Center,
+  Container,
+  Grid,
+  Group,
+  Paper,
+  SimpleGrid,
+  Space,
+  Stack,
+} from "@mantine/core";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Cards from "../../components/Card1";
 import HeaderMegaMenu from "../../components/Header";
 import { NavbarMinimal } from "../../components/Sidebar";
 import { FeaturesCard } from "../../components/UserNftCard";
-import styles from "../../styles/user/a.module.scss";
-import { useAccount } from '@web3modal/react'
-
+import styles from "../../styles/user/b.module.scss";
 
 export default function A() {
-  const { chainSupported, address, chainId, connector } = useAccount()
-  console.log(address);
-  
- 
+  useEffect(() => {}, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +28,7 @@ export default function A() {
       <AppShell
         padding="md"
         header={<HeaderMegaMenu />}
-        //navbar={<NavbarMinimal />}
+        navbar={<NavbarMinimal />}
         styles={(theme) => ({
           main: {
             backgroundColor:
@@ -42,19 +49,21 @@ export default function A() {
             mt={20}
             radius="md"
           >
-            <SimpleGrid cols={3}
-            breakpoints={[
-              { maxWidth: 980, cols: 3, spacing: 'md' },
-              { maxWidth: 755, cols: 2, spacing: 'sm' },
-              { maxWidth: 600, cols: 1, spacing: 'sm' },
-            ]}
-            >
-              {
-               [1,2,3,4].map((data, index)=>{
-                return <div key={index}><FeaturesCard/></div>
-               }) 
-              }
-            </SimpleGrid>
+            <Group grow>
+              <img src="https://picsum.photos/300/200" />
+              <Stack>
+                <Button>Transfer NFT</Button>
+                <Button>click me</Button>
+                <Button>click me</Button>
+              </Stack>
+            </Group>
+            <Group mt={40}>
+              <SimpleGrid cols={3}>
+                <Cards />
+                <Cards />
+                <Cards />
+              </SimpleGrid>
+            </Group>
           </Paper>
         </div>
       </AppShell>

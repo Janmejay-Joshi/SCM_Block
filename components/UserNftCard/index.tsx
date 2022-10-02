@@ -1,4 +1,4 @@
-import { Card, Image, Text, Group, Badge, createStyles, Center, Button } from '@mantine/core';
+import { Card, Image, Text, Group, Badge, createStyles, Center, Button, Stack } from '@mantine/core';
 import { IconGasStation, IconGauge, IconManualGearbox, IconUsers } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
@@ -39,19 +39,22 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const mockdata = [
-  { label: '4 passengers', icon: IconUsers },
-  { label: '100 km/h in 4 seconds', icon: IconGauge },
-  { label: 'Automatic gearbox', icon: IconManualGearbox },
-  { label: 'Electric', icon: IconGasStation },
+  { label: 'Product1',nousers:20, icon: IconUsers },
+  { label: 'Product2',nousers:40, icon: IconUsers },
+  { label: 'Product3',nousers:50, icon: IconUsers },
+  { label: 'Electric',nousers:40, icon: IconUsers },
 ];
 
 export function FeaturesCard() {
   const { classes } = useStyles();
   const features = mockdata.map((feature) => (
-    <Center key={feature.label}>
+    <div key={feature.label}>
+      <Group>
       <feature.icon size={18} className={classes.icon} stroke={1.5} />
       <Text size="xs">{feature.label}</Text>
-    </Center>
+      <Text size="xs">{feature.nousers}</Text>
+      </Group>
+    </div>
   ));
 
   return (
@@ -62,10 +65,8 @@ export function FeaturesCard() {
 
       <Group position="apart" mt="md">
         <div>
-          <Text weight={500}>Tesla Model S</Text>
-          <Text size="xs" color="dimmed">
-            Free recharge at any station
-          </Text>
+          <Text weight={500}>Product</Text>
+          
         </div>
       </Group>
 
@@ -74,9 +75,9 @@ export function FeaturesCard() {
           Basic configuration
         </Text>
 
-        <Group spacing={8} mb={-8}>
+        <Stack spacing={8} mb={-8}>
           {features}
-        </Group>
+        </Stack>
       </Card.Section>
 
       

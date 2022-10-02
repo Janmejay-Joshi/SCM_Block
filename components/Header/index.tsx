@@ -31,6 +31,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { MantineLogo } from '@mantine/ds';
+import { useConnectModal } from '@web3modal/react'
+  import { ConnectWallet } from "@thirdweb-dev/react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -130,6 +132,7 @@ const mockdata = [
 ];
 
 export default function HeaderMegaMenu() {
+  const { isOpen, open, close } = useConnectModal()
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
@@ -171,7 +174,7 @@ export default function HeaderMegaMenu() {
               shadow="md"
               withinPortal
             >
-              <HoverCard.Target>
+              {/* <HoverCard.Target>
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
@@ -183,7 +186,7 @@ export default function HeaderMegaMenu() {
                     />
                   </Center>
                 </a>
-              </HoverCard.Target>
+              </HoverCard.Target> */}
 
               <HoverCard.Dropdown sx={{ overflow: "hidden" }}>
                 <Divider
@@ -200,7 +203,7 @@ export default function HeaderMegaMenu() {
               </HoverCard.Dropdown>
             </HoverCard>
             <Link href="/aboutus">
-              <span className={classes.link}>About Us</span>
+              <span className={classes.link}>Track NFTs</span>
             </Link>
             <Link href="/contactus" className={classes.link}>
               <span className={classes.link}>Contact Us</span>
@@ -208,16 +211,7 @@ export default function HeaderMegaMenu() {
           </Group>
 
           <Group className={classes.hiddenMobile}>
-          <Link href="/auth/login">
-            <Button variant="default">
-              Log in
-            </Button>
-            </Link>
-            <Link href="/auth/signup">
-            <Button>
-             Register
-            </Button>
-            </Link>
+          <ConnectWallet/>
           </Group>
 
           <Burger
@@ -274,11 +268,7 @@ export default function HeaderMegaMenu() {
               Log in
             </Button>
             </Link>
-            <Link href="/auth/signup">
-            <Button>
-             Register
-            </Button>
-            </Link>
+          <ConnectWallet/>
           </Group>
         </ScrollArea>
       </Drawer>
