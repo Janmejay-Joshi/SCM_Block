@@ -150,7 +150,7 @@ const dataGet =async () => {
               required
             /> */}
 
-            <Button fullWidth mt="xl" type="submit" onClick={dataGet}>
+            <Button fullWidth mt="xl" type="submit" onClick={onSubmitNFT}>
               Add Components
             </Button>
           </form>
