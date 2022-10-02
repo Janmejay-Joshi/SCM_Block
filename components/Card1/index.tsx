@@ -1,4 +1,5 @@
 import { Card, Image, Text } from '@mantine/core';
+import { Button } from '@mantine/core';
 
 export default function Cards() {
   return (
@@ -18,12 +19,17 @@ export default function Cards() {
       </Card.Section>
 
       <Text weight={500} size="lg" mt="md">
-        You&apos;ve won a million dollars in cash!
+       Product Name
       </Text>
+      <br></br>
 
-      <Text mt="xs" color="dimmed" size="sm">
+      {/* <Text mt="xs" color="dimmed" size="sm">
         Please click anywhere on this card to claim your reward, this is not a fraud, trust us
-      </Text>
+      </Text> */}
+      <Button variant="outline" color="dark">
+      Transfer NFT
+    </Button>
+
     </Card>
   );
 }

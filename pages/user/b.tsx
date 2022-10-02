@@ -49,14 +49,24 @@ export default function A() {
             mt={20}
             radius="md"
           >
-            <Group grow>
+            {/* <Group grow>
               <img src="https://picsum.photos/300/200" />
               <Stack>
-                <Button>Transfer NFT</Button>
-                <Button>click me</Button>
-                <Button>click me</Button>
+              <Button variant="outline" color="dark" size="xs" >
+      Transfer NFT
+    </Button>
+                <Button variant="outline" color="dark" size="xs">click me</Button>
+                <Button variant="outline" color="dark" size="xs">click me</Button>
               </Stack>
+            </Group> */}
+            <Group mt={40}>
+              <SimpleGrid cols={3}>
+                <Cards />
+                <Cards />
+                <Cards />
+              </SimpleGrid>
             </Group>
+
             <Group mt={40}>
               <SimpleGrid cols={3}>
                 <Cards />

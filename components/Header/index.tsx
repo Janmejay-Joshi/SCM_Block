@@ -202,11 +202,11 @@ export default function HeaderMegaMenu() {
                 <div className={classes.dropdownFooter}></div>
               </HoverCard.Dropdown>
             </HoverCard>
-            <Link href="/aboutus">
+            <Link href="/user/a">
               <span className={classes.link}>Track NFTs</span>
             </Link>
-            <Link href="/contactus" className={classes.link}>
-              <span className={classes.link}>Contact Us</span>
+            <Link href="/user/b" className={classes.link}>
+              <span className={classes.link}>User NFTs</span>
             </Link>
           </Group>
 
