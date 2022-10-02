@@ -46,17 +46,23 @@ export default function Signup() {
 
 const onSubmitNFT =async () => {
   const metadatas = [{
-  name: "Cool NFT",
-  description: "This is a cool NFT",
-  units: 0
-}, {
-  name: "Cool NFT",
-  description: "This is a cool NFT",
-  units: 0
-}];
+  name: form.values.name,
+  description: form.values.desc,
+  metadata:{
+  units: form.values.units
+}}];
 
   if(contract){
     const results = await contract.createBatch(metadatas); // uploads and creates the NFTs on chain
+
+  }
+  
+}
+
+const dataGet =async () => {
+  if(contract){
+    const nft = await contract.getAllClaimed();
+    console.log(nft);
   }
 }
 
@@ -144,7 +150,7 @@ const onSubmitNFT =async () => {
               required
             /> */}
 
-            <Button fullWidth mt="xl" type="submit" onClick={onSubmitNFT}>
+            <Button fullWidth mt="xl" type="submit" onClick={dataGet}>
               Add Components
             </Button>
           </form>
