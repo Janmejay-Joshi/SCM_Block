@@ -28,7 +28,7 @@ export default function A() {
       <AppShell
         padding="md"
         header={<HeaderMegaMenu />}
-        navbar={<NavbarMinimal />}
+        // navbar={<NavbarMinimal />}
         styles={(theme) => ({
           main: {
             backgroundColor:
@@ -59,21 +59,21 @@ export default function A() {
                 <Button variant="outline" color="dark" size="xs">click me</Button>
               </Stack>
             </Group> */}
-            <Group mt={40}>
-              <SimpleGrid cols={3}>
-                <Cards />
-                <Cards />
-                <Cards />
-              </SimpleGrid>
-            </Group>
+              <Group grow mt={40}>
+                <SimpleGrid cols={3}>
+                  <Cards />
+                  <Cards />
+                  <Cards />
+                </SimpleGrid>
+              </Group>user/b
 
-            <Group mt={40}>
-              <SimpleGrid cols={3}>
-                <Cards />
-                <Cards />
-                <Cards />
-              </SimpleGrid>
-            </Group>
+              <Group grow mt={40}>
+                <SimpleGrid cols={3}>
+                  <Cards />
+                  <Cards />
+                  <Cards />
+                </SimpleGrid>
+              </Group>
           </Paper>
         </div>
       </AppShell>

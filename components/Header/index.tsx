@@ -202,10 +202,10 @@ export default function HeaderMegaMenu() {
                 <div className={classes.dropdownFooter}></div>
               </HoverCard.Dropdown>
             </HoverCard>
-            <Link href="/user/a">
+            <Link href="/supplier/a">
               <span className={classes.link}>Track NFTs</span>
             </Link>
-            <Link href="/user/b" className={classes.link}>
+            <Link href="/user/a" className={classes.link}>
               <span className={classes.link}>User NFTs</span>
             </Link>
           </Group>
@@ -240,21 +240,14 @@ export default function HeaderMegaMenu() {
           <Link href="/">
             <span className={classes.link}>Home</span>
           </Link>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-              <Box component="span" mr={5}>
-                Features
-              </Box>
-              <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-            </Center>
-          </UnstyledButton>
+          
           <Collapse in={linksOpened}>{links}</Collapse>
-          <Link href="/aboutus" className={classes.link}>
-            <span className={classes.link}>About Us</span>
+          <Link href="/supplier/" className={classes.link}>
+            <span className={classes.link}>Track NFT</span>
           </Link>
           <Space />
-          <Link href="/contactus" className={classes.link}>
-            <span className={classes.link}>Contact Us</span>
+          <Link href="/user/a" className={classes.link}>
+            <span className={classes.link}>User NFT</span>
           </Link>
 
           <Divider
